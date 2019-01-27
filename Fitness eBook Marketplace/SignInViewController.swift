@@ -73,7 +73,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        header.addCharacterSpacing()
+//        header.addCharacterSpacing()
         // Do any additional setup after loading the view.
         
         
@@ -90,9 +90,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         emailtf.becomeFirstResponder()
         //        tapcreate.layer.cornerRadius = 22.0
         //        tapcreate.layer.masksToBounds = true
-        
+        emailtf.layer.borderWidth = 0.5
+        emailtf.layer.borderColor = UIColor.darkGray.cgColor
+        passwordtf.layer.borderColor = UIColor.darkGray.cgColor
+        passwordtf.layer.borderWidth = 0.5
         errorlabel.alpha = 0
+        taps.layer.cornerRadius = 22.0
+        taps.layer.masksToBounds = true
         
     }
         // Do any additional setup after loading the view.
+    @IBOutlet weak var taps: UIButton!
 }
