@@ -24,6 +24,7 @@ var review1s = String()
 
 class OverviewTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var better: UIImageView!
     @IBOutlet weak var reviewss: UILabel!
     @IBOutlet weak var t6: UIImageView!
     @IBOutlet weak var t5: UIImageView!
@@ -57,7 +58,6 @@ class OverviewTableViewCell: UITableViewCell {
     @IBOutlet weak var reviews: UILabel!
     @IBOutlet weak var descriptionlabel: UILabel!
     @IBOutlet weak var titlelabel: UILabel!
-    @IBOutlet weak var mainimage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -64,7 +64,6 @@ class ProductOverviewViewController: UIViewController, UITableViewDelegate, UITa
             
         }
         cell.authorlabel.text = selectedauthor
-        cell.mainimage.image = selectedimage
 //        cell.titlelabel.text = selectedtitle
         cell.descriptionlabel.text = selecteddescription
         cell.reviews.text = "\(selectedreviews) reviews"
@@ -86,9 +85,11 @@ class ProductOverviewViewController: UIViewController, UITableViewDelegate, UITa
         
         cell.writereview.layer.borderColor = UIColor.black.cgColor
         cell.writereview.layer.borderWidth = 1.0
-        cell.mainimage.layer.cornerRadius = cell.mainimage.frame.width/2
-        cell.mainimage.clipsToBounds = true
+        cell.better.layer.cornerRadius = cell.better.frame.size.width/2
+        cell.better.clipsToBounds = true
         cell.reviewss.text = "\(selectedreviews) reviews"
+        cell.better.image = selectedimage
+
 //        if Auth.auth().currentUser == nil {
 //
 //            cell.writereview.alpha  = 0
@@ -139,7 +140,7 @@ class ProductOverviewViewController: UIViewController, UITableViewDelegate, UITa
                     }
                     
                     if var author2 = value?["New Price"] as? String {
-                        selectedprice = author2
+                        selectedprice = "\(author2)/mo"
                         
                     }
                     
@@ -419,7 +420,7 @@ class ProductOverviewViewController: UIViewController, UITableViewDelegate, UITa
         ref = Database.database().reference()
         queryforuser()
         newprice.text = selectedprice
-        tapbuy.layer.cornerRadius = 22.0
+        tapbuy.layer.cornerRadius = 5.0
         tapbuy.layer.masksToBounds = true
 //        queryforreviewinfo()
 //        background.layer.shadowRadius = 10.0
