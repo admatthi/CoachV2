@@ -17,7 +17,9 @@ class SettingsViewController: UIViewController {
     @IBAction func tapContact(_ sender: Any) {
     }
     
-@IBAction func tapAbout(_ sender: Any) {
+    @IBAction func tapPayment(_ sender: Any) {
+    }
+    @IBAction func tapAbout(_ sender: Any) {
     
     if let url = NSURL(string: "https://www.snippetsla.com"
         ) {
@@ -71,6 +73,7 @@ class SettingsViewController: UIViewController {
     }
 }
 
+    @IBOutlet weak var tap5: UIButton!
     @IBOutlet weak var tap4: UIButton!
     @IBOutlet weak var tap3: UIButton!
     @IBOutlet weak var tap2: UIButton!
@@ -86,19 +89,10 @@ class SettingsViewController: UIViewController {
         tap3.layer.masksToBounds = true
         tap4.layer.cornerRadius = 22.0
         tap4.layer.masksToBounds = true
-        
+        tap5.layer.cornerRadius = 22.0
+        tap5.layer.masksToBounds = true
         // Do any additional setup after loading the view.
-        
-        if Auth.auth().currentUser != nil {
-            
-            taplogin.alpha = 0
-            taplogout.alpha = 1
-            
-        } else {
-            taplogin.alpha = 1
-            taplogout.alpha = 0
-            
-        }
+       
     }
     
 

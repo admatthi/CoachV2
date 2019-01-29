@@ -24,6 +24,13 @@ var review1s = String()
 
 class OverviewTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var reviewss: UILabel!
+    @IBOutlet weak var t6: UIImageView!
+    @IBOutlet weak var t5: UIImageView!
+    @IBOutlet weak var t4: UIImageView!
+    @IBOutlet weak var t3: UIImageView!
+    @IBOutlet weak var t2: UIImageView!
+    @IBOutlet weak var t1: UIImageView!
     @IBOutlet weak var writereview: UIButton!
     @IBOutlet weak var f: UILabel!
     @IBOutlet weak var e: UILabel!

@@ -32,47 +32,71 @@ class ProductOverviewViewController: UIViewController, UITableViewDelegate, UITa
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Overview", for: indexPath) as! OverviewTableViewCell
         
-        cell.a.addCharacterSpacing()
-        cell.b.addCharacterSpacing()
-        cell.c.addCharacterSpacing()
-        cell.d.addCharacterSpacing()
-        cell.e.addCharacterSpacing()
-        cell.f.text = "REVIEWS (\(selectedreviews))"
-        cell.f.addCharacterSpacing()
+//        cell.a.addCharacterSpacing()
+//        cell.b.addCharacterSpacing()
+//        cell.c.addCharacterSpacing()
+//        cell.d.addCharacterSpacing()
+//        cell.e.addCharacterSpacing()
+//        cell.f.text = "REVIEWS (\(selectedreviews))"
+//        cell.f.addCharacterSpacing()
         
+        cell.t1.layer.cornerRadius = 9.0
+        cell.t1.layer.masksToBounds = true
+        cell.t2.layer.cornerRadius = 9.0
+        cell.t2.layer.masksToBounds = true
+        cell.t3.layer.cornerRadius = 9.0
+        cell.t3.layer.masksToBounds = true
+        cell.t4.layer.cornerRadius = 9.0
+        cell.t4.layer.masksToBounds = true
+        cell.t5.layer.cornerRadius = 9.0
+        cell.t5.layer.masksToBounds = true
+        cell.t6.layer.cornerRadius = 9.0
+        cell.t6.layer.masksToBounds = true
         
+        if thumbnails.count > indexPath.row {
+            
+            cell.t1.image = thumbnails[0]
+            cell.t2.image = thumbnails[1]
+            cell.t3.image = thumbnails[2]
+            cell.t4.image = thumbnails[3]
+            cell.t5.image = thumbnails[4]
+            cell.t6.image = thumbnails[5]
+            
+        }
         cell.authorlabel.text = selectedauthor
         cell.mainimage.image = selectedimage
-        cell.titlelabel.text = selectedtitle
+//        cell.titlelabel.text = selectedtitle
         cell.descriptionlabel.text = selecteddescription
         cell.reviews.text = "\(selectedreviews) reviews"
 
-        cell.goal.text = goals
+//        cell.goal.text = goals
         cell.review1.text = review1s
-        cell.review2.text = review2s
-        cell.review3.text = review3s
+//        cell.review2.text = review2s
+//        cell.review3.text = review3s
         cell.date1.text = date1s
-        cell.date2.text = date2s
-        cell.date3.text = date3s
+//        cell.date2.text = date2s
+//        cell.date3.text = date3s
         cell.name1.text = name1s
-        cell.name2.text = name2s
-        cell.name3.text = name3s
-        cell.weeks.text = weekss
-        cell.days.text = dayss
-        cell.minutes.text = minutess
-        cell.level.text = levels
+//        cell.name2.text = name2s
+//        cell.name3.text = name3s
+//        cell.weeks.text = weekss
+//        cell.days.text = dayss
+//        cell.minutes.text = minutess
+//        cell.level.text = levels
         
         cell.writereview.layer.borderColor = UIColor.black.cgColor
         cell.writereview.layer.borderWidth = 1.0
-        
-        if Auth.auth().currentUser == nil {
-            
-            cell.writereview.alpha  = 0
-            
-        }  else {
-         
-            cell.writereview.alpha  = 1
-        }
+        cell.mainimage.layer.cornerRadius = cell.mainimage.frame.width/2
+        cell.mainimage.clipsToBounds = true
+        cell.reviewss.text = "\(selectedreviews) reviews"
+//        if Auth.auth().currentUser == nil {
+//
+//            cell.writereview.alpha  = 0
+//
+//        }  else {
+//
+//            cell.writereview.alpha  = 1
+//        }
         return cell
     }
     @IBOutlet weak var tableView: UITableView!
@@ -88,20 +112,15 @@ class ProductOverviewViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var oldprice: UILabel!
     @IBAction func tapBuy(_ sender: Any) {
         
-        purchases.entitlements { entitlements in
-            guard let pro = entitlements?["Plans"] else { return }
-            guard let monthly = pro.offerings["Low"] else { return }
-            guard let product = monthly.activeProduct else { return }
-            self.purchases.makePurchase(product)
-            
-            
-        }
+    
+        self.performSegue(withIdentifier: "ProductToApply", sender: self)
         
     }
     
+    var thumbnails = [UIImage]()
     func queryforshare() {
         
-
+                thumbnails.removeAll()
                 
                 ref?.child("Plans").child(selectedgenre).child(selectedid).observeSingleEvent(of: .value, with: { (snapshot) in
                     
@@ -138,6 +157,27 @@ class ProductOverviewViewController: UIViewController, UITableViewDelegate, UITa
                         
                     }
                     
+                    
+                    if var author2 = value?["URL"] as? String {
+                        self.selectedshareurl = author2
+                        
+                    }
+                    
+                    if var author2 = value?["Review1"] as? String {
+                        review1s = author2
+                        
+                    }
+                    
+                    if var author2 = value?["Date1"] as? String {
+                        date1s = author2
+                        
+                    }
+                    
+                    if var author2 = value?["Name1"] as? String {
+                        name1s = author2
+                        
+                    }
+                    
                     if var profileUrl = value?["Image"] as? String {
                         // Create a storage reference from the URL
                         
@@ -145,15 +185,81 @@ class ProductOverviewViewController: UIViewController, UITableViewDelegate, UITa
                         let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
                         selectedimage = UIImage(data: data!)!
                         
+                    }
+                    
+                    if var profileUrl = value?["t1"] as? String {
+                        // Create a storage reference from the URL
+                        
+                        let url = URL(string: profileUrl)
+                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                        var selectedimage = UIImage(data: data!)!
+                        
+                        self.thumbnails.append(selectedimage)
+                        
+                    }
+                    
+                    if var profileUrl = value?["t6"] as? String {
+                        // Create a storage reference from the URL
+                        
+                        let url = URL(string: profileUrl)
+                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                        var selectedimage = UIImage(data: data!)!
+                        
+                        self.thumbnails.append(selectedimage)
+                        
+                    }
+                    
+                    
+                    if var profileUrl = value?["t2"] as? String {
+                        // Create a storage reference from the URL
+                        
+                        let url = URL(string: profileUrl)
+                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                        var selectedimage = UIImage(data: data!)!
+                        
+                        self.thumbnails.append(selectedimage)
+                        
+                    }
+                    
+                    
+                    if var profileUrl = value?["t3"] as? String {
+                        // Create a storage reference from the URL
+                        
+                        let url = URL(string: profileUrl)
+                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                        var selectedimage = UIImage(data: data!)!
+                        
+                        self.thumbnails.append(selectedimage)
+                        
+                    }
+                    
+                    
+                    if var profileUrl = value?["t4"] as? String {
+                        // Create a storage reference from the URL
+                        
+                        let url = URL(string: profileUrl)
+                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                        var selectedimage = UIImage(data: data!)!
+                        
+                        self.thumbnails.append(selectedimage)
+                        
+                    }
+                    
+                    
+                    if var profileUrl = value?["t5"] as? String {
+                        // Create a storage reference from the URL
+                        
+                        let url = URL(string: profileUrl)
+                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                        var selectedimage = UIImage(data: data!)!
+                        
+                        self.thumbnails.append(selectedimage)
                         self.tableView.reloadData()
-
                     }
                     
                     
                     
-                    
-                    
-                    
+              
                 })
     
     
@@ -179,10 +285,7 @@ class ProductOverviewViewController: UIViewController, UITableViewDelegate, UITa
                     goals = author2
                     
                 }
-                if var author2 = value?["Review1"] as? String {
-                    review1s = author2
-                    
-                }
+              
                 if var author2 = value?["Review2"] as? String {
                     review2s = author2
                     
@@ -191,10 +294,7 @@ class ProductOverviewViewController: UIViewController, UITableViewDelegate, UITa
                     review3s = author2
                     
                 }
-                if var author2 = value?["Date1"] as? String {
-                    date1s = author2
-                    
-                }
+              
                 if var author2 = value?["Date2"] as? String {
                     date2s = author2
                     
@@ -203,10 +303,7 @@ class ProductOverviewViewController: UIViewController, UITableViewDelegate, UITa
                     date3s = author2
                     
                 }
-                if var author2 = value?["Name1"] as? String {
-                    name1s = author2
-                    
-                }
+             
                 
                 if var author2 = value?["Name2"] as? String {
                     name2s = author2
@@ -217,12 +314,7 @@ class ProductOverviewViewController: UIViewController, UITableViewDelegate, UITa
                     name3s = author2
                     
                 }
-                
-                if var author2 = value?["URL"] as? String {
-                    self.selectedshareurl = author2
-                    
-                }
-                
+           
                 
                 if var author2 = value?["Weeks"] as? String {
                     weekss = author2
@@ -246,6 +338,31 @@ class ProductOverviewViewController: UIViewController, UITableViewDelegate, UITa
         
     }
     
+    func queryforuser() {
+        
+        ref?.child("Users").child(uid).child("Credit Card").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            var value = snapshot.value as? NSDictionary
+            
+            if var author2 = value?["Number"] as? String {
+                
+                self.performSegue(withIdentifier: "ProductToPurchase", sender: self)
+                
+                
+            } else {
+                
+                self.showalert()
+                
+            }
+            
+        })
+        
+    }
+    
+    func showalert() {
+        
+        
+    }
     var selectedshareurl = String()
                 
     @IBAction func tapShare(_ sender: Any) {
@@ -300,20 +417,21 @@ class ProductOverviewViewController: UIViewController, UITableViewDelegate, UITa
         super.viewDidLoad()
 
         ref = Database.database().reference()
-
+        queryforuser()
         newprice.text = selectedprice
         tapbuy.layer.cornerRadius = 22.0
         tapbuy.layer.masksToBounds = true
-        queryforreviewinfo()
+//        queryforreviewinfo()
 //        background.layer.shadowRadius = 10.0
 //        background.layer.shadowOpacity = 1.0
 //        background.layer.shadowOffset = CGSize(width: 4, height: 4)
 //        background.layer.masksToBounds = false        // Do any additional setup after loading the view.
         
-        if selectedauthor == "" {
-            
+
+//        if selectedauthor == "" {
+        
             queryforshare()
-        }
+//        }
         
      
     }

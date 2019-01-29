@@ -23,6 +23,7 @@
 		9D3090A821FD42A7004B0491 /* OverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3090A721FD42A7004B0491 /* OverviewCollectionViewCell.swift */; };
 		9D3090A921FD42A7004B0491 /* OverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3090A721FD42A7004B0491 /* OverviewCollectionViewCell.swift */; };
 		9D3090AA21FD42A7004B0491 /* OverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3090A721FD42A7004B0491 /* OverviewCollectionViewCell.swift */; };
+		9D32F69A21FF88580059E8DE /* UpdateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D32F69921FF88580059E8DE /* UpdateCardViewController.swift */; };
 		9D3CFE1421F80DAD00A3FB07 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CFE1321F80DAD00A3FB07 /* WriteReviewViewController.swift */; };
 		9D5AA54E21E928C200CF1275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5AA54D21E928C200CF1275 /* AppDelegate.swift */; };
 		9D5AA55021E928C200CF1275 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5AA54F21E928C200CF1275 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		9D5AA57E21E92CF000CF1275 /* PlansCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5AA57D21E92CF000CF1275 /* PlansCollectionViewCell.swift */; };
 		9D7836A221F12D440022D2E0 /* ProductOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7836A121F12D440022D2E0 /* ProductOverviewViewController.swift */; };
 		9D7836A421F15CA50022D2E0 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7836A321F15CA50022D2E0 /* ThankYouViewController.swift */; };
+		9DC858D12200B5E200E27596 /* ApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC858D02200B5E200E27596 /* ApplyViewController.swift */; };
 		9DCCC56221ED8AD9005E25A8 /* GenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCC56121ED8AD9005E25A8 /* GenreCollectionViewCell.swift */; };
 		9DCCC56421EE4A7E005E25A8 /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCC56321EE4A7E005E25A8 /* CreditCardViewController.swift */; };
 		9DCCC56621EE4A9E005E25A8 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCC56521EE4A9E005E25A8 /* CheckoutViewController.swift */; };
@@ -82,6 +84,7 @@
 		9D306BA821EFE9C7009AD6F8 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		9D306BAA21EFEEBE009AD6F8 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		9D3090A721FD42A7004B0491 /* OverviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		9D32F69921FF88580059E8DE /* UpdateCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCardViewController.swift; sourceTree = "<group>"; };
 		9D3CFE1321F80DAD00A3FB07 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
 		9D5AA54A21E928C200CF1275 /* Fitness eBook Marketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness eBook Marketplace.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5AA54D21E928C200CF1275 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 		9D5AA57D21E92CF000CF1275 /* PlansCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D7836A121F12D440022D2E0 /* ProductOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOverviewViewController.swift; sourceTree = "<group>"; };
 		9D7836A321F15CA50022D2E0 /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
+		9DC858D02200B5E200E27596 /* ApplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyViewController.swift; sourceTree = "<group>"; };
 		9DCCC56121ED8AD9005E25A8 /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DCCC56321EE4A7E005E25A8 /* CreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
 		9DCCC56521EE4A9E005E25A8 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				9D5AA54F21E928C200CF1275 /* ViewController.swift */,
 				9D5AA55121E928C200CF1275 /* Main.storyboard */,
 				9D5AA57B21E92C9E00CF1275 /* BrowseViewController.swift */,
+				9DC858D02200B5E200E27596 /* ApplyViewController.swift */,
 				9D306BA821EFE9C7009AD6F8 /* PostsTableViewCell.swift */,
 				9D306BAA21EFEEBE009AD6F8 /* PostViewController.swift */,
 				9DCCC56121ED8AD9005E25A8 /* GenreCollectionViewCell.swift */,
@@ -203,6 +208,7 @@
 				9D2B4F6821E9511E00478414 /* ReviewTableViewCell.swift */,
 				9DCCC56321EE4A7E005E25A8 /* CreditCardViewController.swift */,
 				9DCCC56521EE4A9E005E25A8 /* CheckoutViewController.swift */,
+				9D32F69921FF88580059E8DE /* UpdateCardViewController.swift */,
 				9D5AA55421E928C600CF1275 /* Assets.xcassets */,
 				9D3090A721FD42A7004B0491 /* OverviewCollectionViewCell.swift */,
 				9D5AA55621E928C600CF1275 /* LaunchScreen.storyboard */,
@@ -493,9 +499,11 @@
 				9D3090A821FD42A7004B0491 /* OverviewCollectionViewCell.swift in Sources */,
 				9D2B4F6B21E95A3500478414 /* MyPlansViewController.swift in Sources */,
 				9DCCC56621EE4A9E005E25A8 /* CheckoutViewController.swift in Sources */,
+				9D32F69A21FF88580059E8DE /* UpdateCardViewController.swift in Sources */,
 				9D2B4F7121E95A6900478414 /* WelcomeViewController.swift in Sources */,
 				9D306BAB21EFEEBF009AD6F8 /* PostViewController.swift in Sources */,
 				9D3CFE1421F80DAD00A3FB07 /* WriteReviewViewController.swift in Sources */,
+				9DC858D12200B5E200E27596 /* ApplyViewController.swift in Sources */,
 				9D2B4F7321E95A7B00478414 /* RegisterViewController.swift in Sources */,
 				9DCCC56421EE4A7E005E25A8 /* CreditCardViewController.swift in Sources */,
 				9D2B4F6521E9500A00478414 /* OverviewTableViewCell.swift in Sources */,
